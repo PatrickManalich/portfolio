@@ -2,9 +2,9 @@ import type { WorkPreview } from "@/lib/types"
 
 import { WorkCard } from "./work-card"
 
-export function WorkGrid({ work }: { work: WorkPreview[] }) {
+export function WorkList({ work }: { work: WorkPreview[] }) {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="flex flex-col gap-6">
       {work.map((item) => (
         <WorkCard key={item.slug} work={item} />
       ))}

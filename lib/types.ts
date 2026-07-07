@@ -36,7 +36,6 @@ export type WorkPreview = {
   description: string
   tags: string[]
   metrics: Metric[]
-  liveUrl?: string
 }
 
 export type WorkMeta = {
