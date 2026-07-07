@@ -27,7 +27,7 @@ export type Strength = {
   description: string
 }
 
-export type CaseStudyPreview = {
+export type WorkPreview = {
   slug: string
   client: string
   role: string
@@ -39,14 +39,14 @@ export type CaseStudyPreview = {
   liveUrl?: string
 }
 
-export type CaseStudyMeta = {
+export type WorkMeta = {
   role: string
   responsibilities: string[]
   collaborators: string[]
   timeline: string
 }
 
-export type CaseStudyContentSection = {
+export type WorkContentSection = {
   id: string
   heading: string
   subheading?: string
@@ -54,13 +54,13 @@ export type CaseStudyContentSection = {
   metrics?: Metric[]
 }
 
-export type CaseStudy = CaseStudyPreview & {
+export type Work = WorkPreview & {
   category: string
   metaDescription: string
   intro: string
   goals: string[]
-  meta: CaseStudyMeta
-  sections: CaseStudyContentSection[]
+  meta: WorkMeta
+  sections: WorkContentSection[]
 }
 
 export type TimelineEntry = {

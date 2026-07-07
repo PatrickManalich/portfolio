@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 
-export function CaseStudyHero({
+export function WorkHero({
   category,
   title,
   metaDescription,

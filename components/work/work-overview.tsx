@@ -1,20 +1,20 @@
-import type { CaseStudyMeta } from "@/lib/types"
+import type { WorkMeta } from "@/lib/types"
 
-const metaFields: { label: string; key: keyof CaseStudyMeta }[] = [
+const metaFields: { label: string; key: keyof WorkMeta }[] = [
   { label: "Role", key: "role" },
   { label: "Responsibilities", key: "responsibilities" },
   { label: "Collaborators", key: "collaborators" },
   { label: "Timeline", key: "timeline" },
 ]
 
-export function CaseStudyOverview({
+export function WorkOverview({
   intro,
   goals,
   meta,
 }: {
   intro: string
   goals: string[]
-  meta: CaseStudyMeta
+  meta: WorkMeta
 }) {
   return (
     <div className="grid grid-cols-1 gap-10 py-10 lg:grid-cols-[2fr_1fr]">

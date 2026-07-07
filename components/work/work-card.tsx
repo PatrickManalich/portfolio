@@ -4,49 +4,41 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { MetricsRow } from "@/components/shared/metrics-row"
 import { Surface } from "@/components/shared/surface"
-import type { CaseStudyPreview } from "@/lib/types"
+import type { WorkPreview } from "@/lib/types"
 
-export function CaseStudyCard({
-  caseStudy,
-}: {
-  caseStudy: CaseStudyPreview
-}) {
+export function WorkCard({ work }: { work: WorkPreview }) {
   return (
     <Surface className="flex h-full flex-col gap-4">
       <div className="flex flex-col gap-1">
         <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-          {caseStudy.client}
+          {work.client}
         </span>
         <h3 className="text-lg font-semibold tracking-tight">
-          {caseStudy.title}
+          {work.title}
         </h3>
       </div>
-      <p className="text-sm text-muted-foreground">{caseStudy.description}</p>
+      <p className="text-sm text-muted-foreground">{work.description}</p>
       <div className="flex flex-wrap gap-2">
-        {caseStudy.tags.map((tag) => (
+        {work.tags.map((tag) => (
           <Badge key={tag} variant="secondary">
             {tag}
           </Badge>
         ))}
       </div>
-      <MetricsRow metrics={caseStudy.metrics} />
+      <MetricsRow metrics={work.metrics} />
       <div className="mt-auto flex flex-wrap items-center gap-3 pt-2">
         <Button
           nativeButton={false}
-          render={<Link href={`/case-studies/${caseStudy.slug}`} />}
+          render={<Link href={`/work/${work.slug}`} />}
         >
-          View case study
+          View work
         </Button>
-        {caseStudy.liveUrl ? (
+        {work.liveUrl ? (
           <Button
             variant="outline"
             nativeButton={false}
             render={
-              <a
-                href={caseStudy.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              />
+              <a href={work.liveUrl} target="_blank" rel="noopener noreferrer" />
             }
           >
             View live

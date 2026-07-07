@@ -1,10 +1,10 @@
 import { MetricsRow } from "@/components/shared/metrics-row"
-import type { CaseStudyContentSection } from "@/lib/types"
+import type { WorkContentSection } from "@/lib/types"
 
 export function ContentSection({
   section,
 }: {
-  section: CaseStudyContentSection
+  section: WorkContentSection
 }) {
   return (
     <section className="flex flex-col gap-4 border-t border-border py-10">

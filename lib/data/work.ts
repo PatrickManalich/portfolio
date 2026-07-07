@@ -1,4 +1,4 @@
-import type { CaseStudy } from "@/lib/types"
+import type { Work } from "@/lib/types"
 
 const placeholderSections = (topics: string[]) =>
   topics.map((heading, index) => ({
@@ -12,7 +12,7 @@ const placeholderSections = (topics: string[]) =>
       : {}),
   }))
 
-export const caseStudies: CaseStudy[] = [
+export const work: Work[] = [
   {
     slug: "capdata-3-0",
     client: "CAP Index",
