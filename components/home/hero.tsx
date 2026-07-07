@@ -1,6 +1,6 @@
-import { MapPin } from "lucide-react"
+import { RiMapPinLine } from "@remixicon/react"
 
-import { Button } from "@/components/ui/button"
+import { contactLinks } from "@/lib/data/contact-links"
 import { site } from "@/lib/data/site"
 
 export function Hero() {
@@ -17,16 +17,25 @@ export function Hero() {
           {site.heroSummary}
         </p>
       </div>
-      <div className="flex flex-wrap items-center gap-4">
-        <Button
-          nativeButton={false}
-          render={<a href={`mailto:${site.email}`} />}
-        >
-          Get in touch
-        </Button>
+      <div className="flex flex-col gap-3">
+        <div className="flex flex-wrap items-center gap-6">
+          {contactLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              {...(link.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              className="flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-muted-foreground"
+            >
+              <link.icon className="size-5" />
+              {link.label}
+            </a>
+          ))}
+        </div>
         <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
-          <MapPin className="size-4" />
-          {site.location}
+          <RiMapPinLine className="size-4" />
+          {site.location} · {site.remoteNote}
         </span>
       </div>
     </div>

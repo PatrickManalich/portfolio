@@ -1,5 +1,6 @@
 import Link from "next/link"
 
+import { contactLinks } from "@/lib/data/contact-links"
 import { navItems, site } from "@/lib/data/site"
 
 export function SiteFooter() {
@@ -7,28 +8,49 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-8 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-sm font-semibold">{site.name}</p>
-          <p className="text-sm text-muted-foreground">{site.title}</p>
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-8">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <nav className="flex flex-wrap gap-6">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm text-muted-foreground hover:text-foreground"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex items-center gap-4">
+            {contactLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                aria-label={link.label}
+                {...(link.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <link.icon className="size-5" />
+              </a>
+            ))}
+          </div>
         </div>
-        <nav className="flex flex-wrap gap-4">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm text-muted-foreground hover:text-foreground"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="flex flex-col gap-1 text-sm text-muted-foreground sm:items-end">
-          <a href={`mailto:${site.email}`} className="hover:text-foreground">
-            {site.email}
-          </a>
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-6 text-sm text-muted-foreground">
           <p>
             © {year} {site.name}
+          </p>
+          <p>
+            Built with Next.js ·{" "}
+            <a
+              href={site.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              Source
+            </a>
           </p>
         </div>
       </div>

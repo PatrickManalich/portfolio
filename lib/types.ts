@@ -1,6 +1,7 @@
-import type { ComponentType, SVGProps } from "react"
+import type { ComponentType } from "react"
 
-export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>
+/** Structural type covering both lucide-react and @remixicon/react icon components. */
+export type IconComponent = ComponentType<{ className?: string }>
 
 export type NavItem = {
   label: string
@@ -10,6 +11,13 @@ export type NavItem = {
 export type Metric = {
   label: string
   value: string
+}
+
+export type ContactLink = {
+  label: string
+  href: string
+  icon: IconComponent
+  external: boolean
 }
 
 export type Strength = {
