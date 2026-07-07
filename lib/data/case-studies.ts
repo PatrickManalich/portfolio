@@ -53,7 +53,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "neurosparks",
     client: "Barron Associates",
     role: "Lead Front-End Engineer",
-    dates: "Aug 2018 – Mar 2024",
+    dates: "Aug 2018 – Apr 2024",
     title: "NeuroSPARKS Educational Games",
     description:
       "Conceiving and executing the vision for the award-winning NeuroSPARKS educational games, recognized with the 2022 Back to School Tech & Learning Award of Excellence.",
@@ -81,7 +81,7 @@ export const caseStudies: CaseStudy[] = [
         "Cross-platform implementation",
       ],
       collaborators: ["Researchers", "Engineers", "Clients"],
-      timeline: "Aug 2018 – Mar 2024",
+      timeline: "Aug 2018 – Apr 2024",
     },
     sections: placeholderSections(["Challenge", "Approach", "Outcome"]),
   },

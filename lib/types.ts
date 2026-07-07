@@ -54,3 +54,13 @@ export type CaseStudy = CaseStudyPreview & {
   meta: CaseStudyMeta
   sections: CaseStudyContentSection[]
 }
+
+export type TimelineEntry = {
+  id: string
+  title: string
+  organization: string
+  type?: string
+  dateRange: string
+  duration?: string
+  location?: string
+}

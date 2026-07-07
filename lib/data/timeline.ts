@@ -1,0 +1,57 @@
+import type { TimelineEntry } from "@/lib/types"
+
+export const timeline: TimelineEntry[] = [
+  {
+    id: "clemson-university",
+    title: "Clemson University",
+    organization: "B.S. in Computer Science",
+    type: "Education",
+    dateRange: "Aug 2014 – May 2018",
+    location: "Clemson, SC",
+  },
+  {
+    id: "self-regional-healthcare",
+    title: "Information Technology Trainee",
+    organization: "Self Regional Healthcare",
+    type: "Internship",
+    dateRange: "May 2015 – Jul 2015",
+    duration: "3 mos",
+    location: "Greenwood, SC",
+  },
+  {
+    id: "blackbaud",
+    title: "Full-Stack Engineer",
+    organization: "Blackbaud",
+    type: "Internship",
+    dateRange: "Jun 2016 – Aug 2016",
+    duration: "3 mos",
+    location: "Charleston, SC",
+  },
+  {
+    id: "high-fidelity",
+    title: "Software Engineer",
+    organization: "High Fidelity, Inc.",
+    type: "Internship",
+    dateRange: "Jun 2017 – Aug 2017",
+    duration: "3 mos",
+    location: "San Francisco Bay Area",
+  },
+  {
+    id: "barron-associates",
+    title: "Lead Front-End Engineer",
+    organization: "Barron Associates, Inc.",
+    type: "Full-time",
+    dateRange: "Aug 2018 – Apr 2024",
+    duration: "5 yrs 9 mos",
+    location: "Charlottesville, Virginia, United States",
+  },
+  {
+    id: "cap-index",
+    title: "Senior UI/UX Engineer",
+    organization: "CAP Index",
+    type: "Full-time",
+    dateRange: "Apr 2024 – Jun 2026",
+    duration: "2 yrs 3 mos",
+    location: "Remote",
+  },
+]
