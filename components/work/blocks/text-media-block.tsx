@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react"
 
 import { Container } from "@/components/shared/container"
-import { MediaPlaceholder } from "@/components/shared/media-placeholder"
+import { Lightbox } from "@/components/shared/lightbox"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { SimpleCard } from "@/components/shared/simple-card"
 import { Surface } from "@/components/shared/surface"
@@ -24,7 +24,7 @@ export function TextMediaBlockView({ block }: { block: TextMediaBlock }) {
         <SectionHeading eyebrow={block.eyebrow} title={block.heading} />
         <TextMediaContentView content={block.content} />
       </div>
-      <MediaPlaceholder
+      <Lightbox
         caption={block.media.caption}
         className={cn("aspect-video", block.textSide === "right" && "lg:order-1")}
       />

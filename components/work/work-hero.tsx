@@ -1,5 +1,5 @@
 import { Container } from "@/components/shared/container"
-import { MediaPlaceholder } from "@/components/shared/media-placeholder"
+import { Lightbox } from "@/components/shared/lightbox"
 import type { MediaSpec } from "@/lib/types"
 
 export function WorkHero({
@@ -34,7 +34,7 @@ export function WorkHero({
       {media ? (
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {media.map((item, index) => (
-            <MediaPlaceholder key={index} caption={item.caption} className="aspect-video" />
+            <Lightbox key={index} caption={item.caption} className="aspect-video" />
           ))}
         </div>
       ) : null}
