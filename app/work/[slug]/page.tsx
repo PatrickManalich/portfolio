@@ -1,9 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { WorkHero } from "@/components/work/work-hero"
-import { WorkOverview } from "@/components/work/work-overview"
-import { ContentSection } from "@/components/work/content-section"
+import { CaseStudyBlockView } from "@/components/work/blocks/case-study-block"
 import { NextCaseStudy } from "@/components/work/next-case-study"
 import { work } from "@/lib/data/work"
 
@@ -40,23 +38,9 @@ export default async function WorkPage(props: PageProps<"/work/[slug]">) {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-3xl px-6 pt-16">
-        <WorkHero
-          category={workItem.category}
-          title={workItem.title}
-          metaDescription={workItem.metaDescription}
-          role={workItem.role}
-          dates={workItem.dates}
-        />
-        <WorkOverview
-          intro={workItem.intro}
-          goals={workItem.goals}
-          meta={workItem.meta}
-        />
-        {workItem.sections.map((section) => (
-          <ContentSection key={section.id} section={section} />
-        ))}
-      </div>
+      {workItem.blocks.map((block) => (
+        <CaseStudyBlockView key={block.id} block={block} work={workItem} />
+      ))}
       <NextCaseStudy work={nextWork} />
     </>
   )

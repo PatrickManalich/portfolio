@@ -1,25 +1,29 @@
-import { Badge } from "@/components/ui/badge"
+import { Container } from "@/components/shared/container"
+import { MediaPlaceholder } from "@/components/shared/media-placeholder"
+import type { MediaSpec } from "@/lib/types"
 
 export function WorkHero({
-  category,
-  title,
+  eyebrow,
+  headline,
   metaDescription,
   role,
   dates,
+  media,
 }: {
-  category: string
-  title: string
+  eyebrow: string
+  headline: string
   metaDescription: string
   role: string
   dates: string
+  media?: MediaSpec[]
 }) {
   return (
-    <div className="flex flex-col gap-4 border-b border-border pb-10">
-      <Badge variant="outline" className="w-fit">
-        {category}
-      </Badge>
+    <Container width="wide" className="flex flex-col gap-4">
+      <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+        {eyebrow}
+      </span>
       <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-        {title}
+        {headline}
       </h1>
       <p className="max-w-2xl text-lg text-muted-foreground">
         {metaDescription}
@@ -27,6 +31,13 @@ export function WorkHero({
       <p className="text-sm text-muted-foreground">
         {role} · {dates}
       </p>
-    </div>
+      {media ? (
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {media.map((item, index) => (
+            <MediaPlaceholder key={index} caption={item.caption} className="aspect-video" />
+          ))}
+        </div>
+      ) : null}
+    </Container>
   )
 }

@@ -38,28 +38,100 @@ export type WorkPreview = {
   metrics: Metric[]
 }
 
-export type WorkMeta = {
-  role: string
-  responsibilities: string[]
-  collaborators: string[]
-  timeline: string
+export type MediaSpec = {
+  caption: string
 }
 
-export type WorkContentSection = {
+export type HeroBlock = {
+  type: "hero"
+  id: string
+  media?: MediaSpec[]
+}
+
+export type OverviewBlock = {
+  type: "overview"
+  id: string
+  paragraphs: string[]
+  facts: { label: string; value: string }[]
+}
+
+export type StatementBlock = {
+  type: "statement"
+  id: string
+  eyebrow: string
+  text: string
+}
+
+export type CardRowItem = {
+  label: string
+  text: string
+}
+
+export type CardRowBlock = {
+  type: "cardRow"
+  id: string
+  eyebrow?: string
+  heading: string
+  cards: CardRowItem[]
+}
+
+export type InsightAction = {
+  insight: string
+  action: string
+}
+
+export type TextMediaContent =
+  | { kind: "prose"; paragraphs: string[] }
+  | { kind: "cards"; cards: CardRowItem[] }
+  | { kind: "pairs"; pairs: InsightAction[] }
+
+export type TextMediaBlock = {
+  type: "textMedia"
+  id: string
+  eyebrow?: string
+  heading: string
+  textSide: "left" | "right"
+  content: TextMediaContent
+  media: MediaSpec
+}
+
+export type FeatureMediaBlock = {
+  type: "featureMedia"
   id: string
   heading: string
-  subheading?: string
-  body: string[]
-  metrics?: Metric[]
+  intro: string
+  media: MediaSpec
 }
 
+export type FrameStripBlock = {
+  type: "frameStrip"
+  id: string
+  heading: string
+  frames: MediaSpec[]
+}
+
+export type StatsBlock = {
+  type: "stats"
+  id: string
+  heading?: string
+  metrics: Metric[]
+}
+
+export type CaseStudyBlock =
+  | HeroBlock
+  | OverviewBlock
+  | StatementBlock
+  | CardRowBlock
+  | TextMediaBlock
+  | FeatureMediaBlock
+  | FrameStripBlock
+  | StatsBlock
+
 export type Work = WorkPreview & {
-  category: string
+  eyebrow: string
+  headline: string
   metaDescription: string
-  intro: string
-  goals: string[]
-  meta: WorkMeta
-  sections: WorkContentSection[]
+  blocks: CaseStudyBlock[]
 }
 
 export type TimelineEntry = {

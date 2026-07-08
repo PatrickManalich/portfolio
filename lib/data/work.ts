@@ -1,17 +1,5 @@
 import type { Work } from "@/lib/types"
 
-const placeholderSections = (topics: string[]) =>
-  topics.map((heading, index) => ({
-    id: heading.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
-    heading,
-    body: [
-      `[Placeholder — write up the "${heading.toLowerCase()}" section here.]`,
-    ],
-    ...(index === topics.length - 1
-      ? { metrics: [{ label: "Placeholder metric", value: "—" }] }
-      : {}),
-  }))
-
 export const work: Work[] = [
   {
     slug: "capdata-3-0",
@@ -27,27 +15,225 @@ export const work: Work[] = [
       { label: "Hi-fi mockups", value: "300+" },
       { label: "Fortune 100 reach", value: "80%" },
     ],
-    category: "Design Systems",
+    eyebrow: "CAP Index case study",
+    headline:
+      "Rebuilding a crime-analytics platform on a dark-mode-first design system",
     metaDescription:
       "Founding and scaling CAP Index's design system from the ground up.",
-    intro:
-      "[Placeholder — intro paragraph summarizing the CAPData 3.0 project scope and impact.]",
-    goals: [
-      "[Placeholder goal — close the design-to-code gap between Figma and production]",
-      "[Placeholder goal — establish a token architecture spanning light and dark mode]",
-      "[Placeholder goal — give teams a documented, adoptable component library]",
+    blocks: [
+      {
+        type: "hero",
+        id: "hero",
+        media: [
+          { caption: "CAPData hi-fi frame — desktop" },
+          { caption: "CAPData hi-fi frame — mobile" },
+        ],
+      },
+      {
+        type: "overview",
+        id: "overview",
+        paragraphs: [
+          "[Placeholder — first overview paragraph summarizing the CAPData 3.0 engagement, sole-designer scope, and the dark-mode-first mandate.]",
+          "[Placeholder — second overview paragraph summarizing outcomes and how the system now underpins new feature work.]",
+        ],
+        facts: [
+          { label: "Role", value: "Senior Design Systems Engineer — sole designer" },
+          {
+            label: "Responsibilities",
+            value: "End-to-end design system: tokens, components, mockups, documentation",
+          },
+          { label: "Collaborators", value: "Branding, Engineering, Product" },
+          { label: "Timeline", value: "2024–2026" },
+        ],
+      },
+      {
+        type: "textMedia",
+        id: "the-challenge",
+        heading: "The challenge",
+        textSide: "left",
+        content: {
+          kind: "cards",
+          cards: [
+            {
+              label: "Business need",
+              text: "[Placeholder — the business need driving the rebuild.]",
+            },
+            {
+              label: "User need",
+              text: "[Placeholder — the user need driving the rebuild.]",
+            },
+          ],
+        },
+        media: { caption: "legacy CAPData screen" },
+      },
+      {
+        type: "statement",
+        id: "problem-to-solve",
+        eyebrow: "Problem to solve",
+        text: "CAPData had grown feature by feature without a system — every screen was custom, inconsistent, and expensive to change.",
+      },
+      {
+        type: "textMedia",
+        id: "research",
+        eyebrow: "Research",
+        heading: "Personas & requirements",
+        textSide: "left",
+        content: {
+          kind: "prose",
+          paragraphs: [
+            "[Placeholder — persona and requirements-gathering paragraph.]",
+          ],
+        },
+        media: { caption: "persona artifact" },
+      },
+      {
+        type: "featureMedia",
+        id: "the-audit",
+        heading: "The audit",
+        intro: "[Placeholder — short intro framing the full-system audit.]",
+        media: { caption: "annotated audit map of the entire CAPData system" },
+      },
+      {
+        type: "cardRow",
+        id: "key-insights",
+        heading: "Key insights",
+        cards: [
+          { label: "[Placeholder insight one]", text: "[Placeholder — supporting detail.]" },
+          { label: "[Placeholder insight two]", text: "[Placeholder — supporting detail.]" },
+          { label: "[Placeholder insight three]", text: "[Placeholder — supporting detail.]" },
+        ],
+      },
+      {
+        type: "statement",
+        id: "how-might-we",
+        eyebrow: "How might we",
+        text: "How might we rebuild CAPData's foundation so every future feature inherits consistency instead of reinventing it?",
+      },
+      {
+        type: "textMedia",
+        id: "the-plan",
+        heading: "The plan",
+        textSide: "left",
+        content: {
+          kind: "prose",
+          paragraphs: [
+            "[Placeholder — the phased plan and priority sequence paragraph.]",
+          ],
+        },
+        media: { caption: "priority sequence diagram" },
+      },
+      {
+        type: "textMedia",
+        id: "foundations-base-library",
+        eyebrow: "Foundations",
+        heading: "Choosing a base library",
+        textSide: "left",
+        content: {
+          kind: "prose",
+          paragraphs: [
+            "[Placeholder — why a headless base library was chosen as the foundation.]",
+          ],
+        },
+        media: { caption: "base library evaluation notes" },
+      },
+      {
+        type: "textMedia",
+        id: "foundations-palette",
+        heading: "Rebuilding the palette with Branding",
+        textSide: "right",
+        content: {
+          kind: "prose",
+          paragraphs: [
+            "[Placeholder — collaborating with Branding to rebuild the color palette.]",
+          ],
+        },
+        media: { caption: "palette exploration board" },
+      },
+      {
+        type: "textMedia",
+        id: "foundations-tokens",
+        heading: "Two-layer token architecture",
+        textSide: "left",
+        content: {
+          kind: "prose",
+          paragraphs: [
+            "[Placeholder — the primitives-to-semantics token architecture.]",
+          ],
+        },
+        media: { caption: "primitives-to-semantics diagram" },
+      },
+      {
+        type: "textMedia",
+        id: "foundations-conventions",
+        heading: "Icon and documentation conventions",
+        textSide: "right",
+        content: {
+          kind: "prose",
+          paragraphs: [
+            "[Placeholder — icon and documentation conventions established for the system.]",
+          ],
+        },
+        media: { caption: "icon and documentation guidelines" },
+      },
+      {
+        type: "frameStrip",
+        id: "lo-fi-to-hi-fi",
+        heading: "Lo-fi to hi-fi",
+        frames: [
+          { caption: "Wireframe" },
+          { caption: "Nav diagram" },
+          { caption: "Hi-fi v1" },
+          { caption: "Hi-fi final" },
+        ],
+      },
+      {
+        type: "frameStrip",
+        id: "dark-mode-first",
+        heading: "Dark mode first",
+        frames: [{ caption: "Light frame" }, { caption: "Dark frame" }],
+      },
+      {
+        type: "textMedia",
+        id: "testing-iteration",
+        heading: "Testing & iteration",
+        textSide: "left",
+        content: {
+          kind: "pairs",
+          pairs: [
+            {
+              insight: "[Placeholder — usability insight one.]",
+              action: "[Placeholder — resulting action one.]",
+            },
+            {
+              insight: "[Placeholder — usability insight two.]",
+              action: "[Placeholder — resulting action two.]",
+            },
+          ],
+        },
+        media: { caption: "usability testing session" },
+      },
+      {
+        type: "stats",
+        id: "results",
+        heading: "Results",
+        metrics: [
+          { label: "Components", value: "250+" },
+          { label: "Hi-fi mockups", value: "300+" },
+          { label: "Dual-mode", value: "WCAG AA" },
+          { label: "Placeholder metric", value: "—" },
+        ],
+      },
+      {
+        type: "cardRow",
+        id: "what-i-learned",
+        heading: "What I learned",
+        cards: [
+          { label: "[Placeholder lesson one]", text: "[Placeholder — supporting detail.]" },
+          { label: "[Placeholder lesson two]", text: "[Placeholder — supporting detail.]" },
+          { label: "[Placeholder lesson three]", text: "[Placeholder — supporting detail.]" },
+        ],
+      },
     ],
-    meta: {
-      role: "Senior UI/UX Engineer",
-      responsibilities: [
-        "Design system architecture",
-        "Design token strategy",
-        "Component documentation",
-      ],
-      collaborators: ["Engineering", "Product", "10+ developers across teams"],
-      timeline: "Apr 2024 – Jun 2026",
-    },
-    sections: placeholderSections(["Challenge", "Approach", "Outcome"]),
   },
   {
     slug: "neurosparks",
@@ -63,26 +249,40 @@ export const work: Work[] = [
       { label: "Platforms", value: "Windows, Android, VR" },
       { label: "Product lines led", value: "Multiple" },
     ],
-    category: "Product Design & Engineering",
+    eyebrow: "Barron Associates case study",
+    headline: "[Placeholder — NeuroSPARKS hero headline.]",
     metaDescription:
       "Lead design and engineering for the award-winning NeuroSPARKS educational games.",
-    intro:
-      "[Placeholder — intro paragraph summarizing the NeuroSPARKS project scope and impact.]",
-    goals: [
-      "[Placeholder goal — deliver consistent visual/interaction quality across Windows, Android, and VR]",
-      "[Placeholder goal — establish a token architecture as the single source of truth]",
-      "[Placeholder goal — incorporate user research into iterative UI development]",
+    blocks: [
+      { type: "hero", id: "hero" },
+      {
+        type: "overview",
+        id: "overview",
+        paragraphs: [
+          "[Placeholder — first overview paragraph summarizing the NeuroSPARKS engagement.]",
+          "[Placeholder — second overview paragraph summarizing outcomes across Windows, Android, and VR.]",
+        ],
+        facts: [
+          { label: "Role", value: "Lead Front-End Engineer" },
+          {
+            label: "Responsibilities",
+            value:
+              "UI/UX design and front-end architecture, design token architecture, cross-platform implementation",
+          },
+          { label: "Collaborators", value: "Researchers, Engineers, Clients" },
+          { label: "Timeline", value: "Aug 2018 – Apr 2024" },
+        ],
+      },
+      {
+        type: "stats",
+        id: "results",
+        heading: "Results",
+        metrics: [
+          { label: "Award", value: "2022 Tech & Learning" },
+          { label: "Platforms", value: "Windows, Android, VR" },
+          { label: "Product lines led", value: "Multiple" },
+        ],
+      },
     ],
-    meta: {
-      role: "Lead Front-End Engineer",
-      responsibilities: [
-        "UI/UX design and front-end architecture",
-        "Design token architecture",
-        "Cross-platform implementation",
-      ],
-      collaborators: ["Researchers", "Engineers", "Clients"],
-      timeline: "Aug 2018 – Apr 2024",
-    },
-    sections: placeholderSections(["Challenge", "Approach", "Outcome"]),
   },
 ]
