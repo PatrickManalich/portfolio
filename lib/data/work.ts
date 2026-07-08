@@ -1,3 +1,5 @@
+import capdataComponentsImage from "@/assets/work/capdata/components.png"
+import capdataDashboardImage from "@/assets/work/capdata/dashboard.png"
 import type { Work } from "@/lib/types"
 
 export const work: Work[] = [
@@ -16,17 +18,24 @@ export const work: Work[] = [
       { label: "Fortune 100 reach", value: "80%" },
     ],
     eyebrow: "CAP Index case study",
-    headline:
-      "Rebuilding a crime-analytics platform on a dark-mode-first design system",
+    headline: "Founding CAP Index's first design system",
     metaDescription:
-      "Founding and scaling CAP Index's design system from the ground up.",
+      "From full design audit to 300+ hi-fi mockups: rebuilding an enterprise platform from the ground up.",
     blocks: [
       {
         type: "hero",
         id: "hero",
         media: [
-          { caption: "CAPData hi-fi frame — desktop" },
-          { caption: "CAPData hi-fi frame — mobile" },
+          {
+            caption: "CAPData dashboard",
+            src: capdataDashboardImage,
+            alt: "CAPData dashboard built on the design system",
+          },
+          {
+            caption: "Component library sheet",
+            src: capdataComponentsImage,
+            alt: "Component library sheet from the CAPData design system",
+          },
         ],
       },
       {
@@ -37,10 +46,11 @@ export const work: Work[] = [
           "[Placeholder — second overview paragraph summarizing outcomes and how the system now underpins new feature work.]",
         ],
         facts: [
-          { label: "Role", value: "Senior Design Systems Engineer — sole designer" },
+          { label: "Role", value: "Senior UI/UX Engineer" },
           {
             label: "Responsibilities",
-            value: "End-to-end design system: tokens, components, mockups, documentation",
+            value:
+              "End-to-end design system: tokens, components, mockups, documentation; mentored a junior designer.",
           },
           { label: "Collaborators", value: "Branding, Engineering, Product" },
           { label: "Timeline", value: "2024–2026" },

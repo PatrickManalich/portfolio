@@ -34,7 +34,15 @@ export function WorkHero({
       {media ? (
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {media.map((item, index) => (
-            <Lightbox key={index} caption={item.caption} className="aspect-video" />
+            <Lightbox
+              key={index}
+              caption={item.caption}
+              src={item.src}
+              alt={item.alt}
+              sizes="(min-width: 1024px) 468px, (min-width: 640px) calc(50vw - 44px), calc(100vw - 60px)"
+              priority
+              className={item.src ? "" : "aspect-video"}
+            />
           ))}
         </div>
       ) : null}

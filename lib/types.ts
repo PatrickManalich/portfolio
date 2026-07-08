@@ -1,4 +1,5 @@
 import type { ComponentType } from "react"
+import type { StaticImageData } from "next/image"
 
 /** Structural type covering both lucide-react and @remixicon/react icon components. */
 export type IconComponent = ComponentType<{ className?: string }>
@@ -40,6 +41,8 @@ export type WorkPreview = {
 
 export type MediaSpec = {
   caption: string
+  src?: StaticImageData
+  alt?: string
 }
 
 export type HeroBlock = {
