@@ -5,8 +5,14 @@ export function SectionHeading({
 }: {
   eyebrow?: string
   title: string
-  description?: string
+  description?: string | string[]
 }) {
+  const paragraphs = Array.isArray(description)
+    ? description
+    : description
+      ? [description]
+      : []
+
   return (
     <div className="flex flex-col gap-2">
       {eyebrow ? (
@@ -17,8 +23,12 @@ export function SectionHeading({
       <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
         {title}
       </h2>
-      {description ? (
-        <p className="max-w-2xl text-muted-foreground">{description}</p>
+      {paragraphs.length > 0 ? (
+        <div className="flex max-w-2xl flex-col gap-3 text-muted-foreground">
+          {paragraphs.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
       ) : null}
     </div>
   )

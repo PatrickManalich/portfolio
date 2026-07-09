@@ -21,12 +21,23 @@ export function TextMediaBlockView({ block }: { block: TextMediaBlock }) {
           block.textSide === "right" && "lg:order-2"
         )}
       >
-        <SectionHeading eyebrow={block.eyebrow} title={block.heading} />
+        <SectionHeading
+          eyebrow={block.eyebrow}
+          title={block.heading}
+          description={block.intro}
+        />
         <TextMediaContentView content={block.content} />
       </div>
       <Lightbox
         caption={block.media.caption}
-        className={cn("aspect-video", block.textSide === "right" && "lg:order-1")}
+        figureCaption={block.media.figureCaption}
+        src={block.media.src}
+        alt={block.media.alt}
+        sizes="(min-width: 1024px) 460px, calc(100vw - 60px)"
+        className={cn(
+          block.media.src ? "" : "aspect-video",
+          block.textSide === "right" && "lg:order-1"
+        )}
       />
     </Container>
   )

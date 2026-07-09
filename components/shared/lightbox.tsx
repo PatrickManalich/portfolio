@@ -5,11 +5,13 @@ import { XIcon } from "lucide-react"
 import Image, { type StaticImageData } from "next/image"
 
 import { Dialog, DialogClose, DialogPortal, DialogTrigger } from "@/components/ui/dialog"
+import { Caption } from "@/components/shared/caption"
 import { MediaPlaceholder } from "@/components/shared/media-placeholder"
 import { cn } from "@/lib/utils"
 
 export function Lightbox({
   caption,
+  figureCaption,
   src,
   alt,
   sizes = "100vw",
@@ -17,32 +19,44 @@ export function Lightbox({
   className,
 }: {
   caption: string
+  figureCaption?: string
   src?: StaticImageData
   alt?: string
   sizes?: string
   priority?: boolean
   className: string
 }) {
+  const trigger = (
+    <DialogTrigger
+      className={cn(
+        "block cursor-zoom-in rounded-lg bg-muted p-1.5 text-left outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+        className
+      )}
+    >
+      {src ? (
+        <Image
+          src={src}
+          alt={alt ?? caption}
+          sizes={sizes}
+          priority={priority}
+          className="h-auto w-full rounded border-[0.5px] border-border"
+        />
+      ) : (
+        <MediaPlaceholder caption={caption} className="size-full" />
+      )}
+    </DialogTrigger>
+  )
+
   return (
     <Dialog>
-      <DialogTrigger
-        className={cn(
-          "block cursor-zoom-in rounded-lg bg-muted p-1.5 text-left outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
-          className
-        )}
-      >
-        {src ? (
-          <Image
-            src={src}
-            alt={alt ?? caption}
-            sizes={sizes}
-            priority={priority}
-            className="h-auto w-full rounded border-[0.5px] border-border"
-          />
-        ) : (
-          <MediaPlaceholder caption={caption} className="size-full" />
-        )}
-      </DialogTrigger>
+      {figureCaption ? (
+        <figure className="m-0 flex flex-col gap-2">
+          {trigger}
+          <Caption>{figureCaption}</Caption>
+        </figure>
+      ) : (
+        trigger
+      )}
       <DialogPortal>
         <DialogPrimitive.Backdrop className="fixed inset-0 z-50 bg-black/90 data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0" />
         <DialogPrimitive.Popup className="fixed inset-0 z-50 flex items-center justify-center p-6 outline-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95">

@@ -25,6 +25,7 @@ export function CaseStudyBlockView({
           role={work.role}
           dates={work.dates}
           media={block.media}
+          caption={block.caption}
         />
       )
     case "overview":

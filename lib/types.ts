@@ -43,12 +43,14 @@ export type MediaSpec = {
   caption: string
   src?: StaticImageData
   alt?: string
+  figureCaption?: string
 }
 
 export type HeroBlock = {
   type: "hero"
   id: string
   media?: MediaSpec[]
+  caption?: string
 }
 
 export type OverviewBlock = {
@@ -75,6 +77,8 @@ export type CardRowBlock = {
   id: string
   eyebrow?: string
   heading: string
+  intro?: string
+  numbered?: boolean
   cards: CardRowItem[]
 }
 
@@ -93,6 +97,7 @@ export type TextMediaBlock = {
   id: string
   eyebrow?: string
   heading: string
+  intro?: string
   textSide: "left" | "right"
   content: TextMediaContent
   media: MediaSpec
@@ -101,8 +106,9 @@ export type TextMediaBlock = {
 export type FeatureMediaBlock = {
   type: "featureMedia"
   id: string
+  eyebrow?: string
   heading: string
-  intro: string
+  intro: string | string[]
   media: MediaSpec
 }
 

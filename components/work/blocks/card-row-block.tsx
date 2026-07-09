@@ -6,10 +6,18 @@ import type { CardRowBlock } from "@/lib/types"
 export function CardRowBlockView({ block }: { block: CardRowBlock }) {
   return (
     <Container width="wide" divider className="flex flex-col gap-8">
-      <SectionHeading eyebrow={block.eyebrow} title={block.heading} />
+      <SectionHeading
+        eyebrow={block.eyebrow}
+        title={block.heading}
+        description={block.intro}
+      />
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        {block.cards.map((card) => (
-          <SimpleCard key={card.label} card={card} />
+        {block.cards.map((card, index) => (
+          <SimpleCard
+            key={card.label}
+            card={card}
+            number={block.numbered ? index + 1 : undefined}
+          />
         ))}
       </div>
     </Container>

@@ -6,10 +6,18 @@ import type { FeatureMediaBlock } from "@/lib/types"
 export function FeatureMediaBlockView({ block }: { block: FeatureMediaBlock }) {
   return (
     <Container width="wide" divider className="flex flex-col gap-8">
-      <SectionHeading title={block.heading} description={block.intro} />
+      <SectionHeading
+        eyebrow={block.eyebrow}
+        title={block.heading}
+        description={block.intro}
+      />
       <Lightbox
         caption={block.media.caption}
-        className="min-h-[420px] w-full sm:min-h-[560px]"
+        figureCaption={block.media.figureCaption}
+        src={block.media.src}
+        alt={block.media.alt}
+        sizes="(min-width: 1024px) 964px, calc(100vw - 60px)"
+        className={block.media.src ? "" : "min-h-[420px] w-full sm:min-h-[560px]"}
       />
     </Container>
   )
