@@ -1,4 +1,5 @@
 import capdataAuditImage from "@/assets/work/capdata/audit.png"
+import capdataButtonsImage from "@/assets/work/capdata/buttons.png"
 import capdataComponentsImage from "@/assets/work/capdata/components.png"
 import capdataDashboardImage from "@/assets/work/capdata/dashboard.png"
 import capdataLegacyImage from "@/assets/work/capdata/legacy.png"
@@ -111,19 +112,23 @@ export const work: Work[] = [
         },
       },
       {
-        type: "featureMedia",
+        type: "textMedia",
         id: "the-audit",
         heading: "The audit",
-        intro: [
-          "With no central design files to work from — no mockups, no documentation, no source of truth — I built the map myself. I went screen by screen through the entire CAPData Platform, capturing and annotating each one: its purpose, where it sat in the user flow, and the issues it carried. Patterns emerged quickly — duplicated functionality, inconsistent components and layouts, navigation that varied from section to section, and accessibility gaps throughout.",
-          "The finished audit became the redesign's foundation: a complete picture of the platform's flows, pain points, and structure — and the reference against which every scoping and priority decision that followed was made.",
-        ],
+        textSide: "left",
+        content: {
+          kind: "prose",
+          paragraphs: [
+            "With no central design files to work from — no mockups, no documentation, no source of truth — I built the map myself. I went screen by screen through the entire CAPData Platform, capturing and annotating each one: its purpose, where it sat in the user flow, and the issues it carried. Patterns emerged quickly — duplicated functionality, inconsistent components and layouts, navigation that varied from section to section, and accessibility gaps throughout.",
+            "The finished audit became the redesign's foundation: a complete picture of the platform's flows, pain points, and structure — and the reference against which every scoping and priority decision that followed was made.",
+          ],
+        },
         media: {
           caption: "annotated audit map of the entire CAPData Platform system",
           src: capdataAuditImage,
           alt: "Annotated audit map of the full CAPData Platform, screens blurred for confidentiality.",
           figureCaption:
-            "The audit map with every screen of the platform annotated and grouped by flow.",
+            "The audit map with every screen of the legacy platform annotated.",
         },
       },
       {
@@ -151,23 +156,7 @@ export const work: Work[] = [
         type: "statement",
         id: "how-might-we",
         eyebrow: "How might we",
-        text: "How might we rebuild the CAPData Platform's foundation so every future feature inherits consistency instead of reinventing it?",
-      },
-      {
-        type: "textMedia",
-        id: "the-plan",
-        heading: "The plan",
-        textSide: "left",
-        content: {
-          kind: "prose",
-          paragraphs: [
-            "[Placeholder — the phased plan and priority sequence paragraph.]",
-          ],
-        },
-        media: {
-          caption: "priority sequence diagram",
-          figureCaption: "[Placeholder caption — priority sequence diagram.]",
-        },
+        text: "How might we rebuild the CAPData Platform so consistency, clarity, and guidance are the default?",
       },
       {
         type: "textMedia",
@@ -178,12 +167,15 @@ export const work: Work[] = [
         content: {
           kind: "prose",
           paragraphs: [
-            "[Placeholder — why a headless base library was chosen as the foundation.]",
+            "The component library decision came first, because everything else would be built on it. In 2024, I evaluated the major options — Material UI, Ant Design, Chakra, and the then-emerging shadcn/ui — against the platform's real constraints: a data-dense enterprise product, WCAG accessibility as a requirement rather than a goal, dark mode as a first-class theme, and a small team that needed to move fast without a dedicated design-systems staff.",
+            "MUI won on maturity. Its components were battle-tested for accessibility out of the box, its theming system handled light and dark modes at the token level, and its breadth — data grids, complex inputs, date handling — covered the platform's needs without custom builds. Rather than constructing every primitive from scratch, we could put our effort where it differentiated: CAP Index's own tokens, patterns, and composite components layered on a proven base.",
           ],
         },
         media: {
           caption: "base library evaluation notes",
-          figureCaption: "[Placeholder caption — base library evaluation notes.]",
+          src: capdataButtonsImage,
+          alt: "Button variant and state matrix — primary, neutral, error, and warning colors across contained, outlined, and text styles, each in enabled, hovered, focused, pressed, and disabled states, at large, medium, and small sizes.",
+          figureCaption: "MUI button variant matrix themed to our brand guidelines.",
         },
       },
       {

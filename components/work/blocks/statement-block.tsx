@@ -5,12 +5,12 @@ export function StatementBlockView({ block }: { block: StatementBlock }) {
   return (
     <Container
       tint
-      className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center"
+      className="mx-auto flex max-w-[60rem] flex-col items-center gap-3 text-center"
     >
       <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
         {block.eyebrow}
       </span>
-      <p className="text-2xl font-semibold tracking-tight sm:text-3xl">
+      <p className="text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
         {block.text}
       </p>
     </Container>
