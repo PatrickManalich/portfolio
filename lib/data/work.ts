@@ -1,9 +1,11 @@
 import capdataAuditImage from "@/assets/work/capdata/audit.png"
+import capdataBrandImage from "@/assets/work/capdata/brand.png"
 import capdataButtonsImage from "@/assets/work/capdata/buttons.png"
 import capdataComponentsImage from "@/assets/work/capdata/components.png"
 import capdataDashboardImage from "@/assets/work/capdata/dashboard.png"
 import capdataLegacyImage from "@/assets/work/capdata/legacy.png"
 import capdataPersonasImage from "@/assets/work/capdata/personas.png"
+import capdataTokensImage from "@/assets/work/capdata/tokens.png"
 import type { Work } from "@/lib/types"
 
 export const work: Work[] = [
@@ -181,55 +183,63 @@ export const work: Work[] = [
       {
         type: "textMedia",
         id: "foundations-palette",
-        heading: "Rebuilding the palette with Branding",
+        heading: "Shaping the new brand",
         textSide: "right",
         content: {
           kind: "prose",
           paragraphs: [
-            "[Placeholder — collaborating with Branding to rebuild the color palette.]",
+            "The redesign coincided with a company-wide rebrand — new logo, colors, and identity across everything CAP Index put in the world. I was part of the small group steering it, alongside the CEO, the head of Marketing, and an outside brand agency, shaping the palette, logo direction, and overall feel.",
+            "My job was making the brand work as an interface: translating the new palette into accessible, color-blind-safe values that could survive data-dense screens, dark mode, and WCAG contrast requirements — the bridge between brand identity and the token architecture that follows.",
           ],
         },
         media: {
-          caption: "palette exploration board",
-          figureCaption: "[Placeholder caption — palette exploration board.]",
+          caption: "brand type and color sheet",
+          src: capdataBrandImage,
+          alt: "The rebrand's type and color sheet.",
+          figureCaption: "The new brand's type and color system.",
         },
       },
       {
         type: "textMedia",
         id: "foundations-tokens",
-        heading: "Two-layer token architecture",
+        heading: "Token architecture",
         textSide: "left",
         content: {
           kind: "prose",
           paragraphs: [
-            "[Placeholder — the primitives-to-semantics token architecture.]",
+            "The token system came next, built directly into the MUI theme structure — primitive color scales (capPrimary, capSecondary, etc.) laid the foundation, with semantic tokens layered on top to drive light and dark theming. This split meant switching an entire mockup or component from light to dark mode in Figma was a single toggle, not a manual rebuild — main, dark, light, and contrastText values, along with interaction states like hover, selected, and focus, all carried their own light/dark pairs automatically. Surface tokens followed the same logic, with a four-level hierarchy — base, raised, overlay, and elevated — giving every component a consistent home regardless of theme. Spacing and typography ran on shared variables too, so a single change at the token level propagated across every mockup and component in the file.",
+            "I documented the system in Confluence and directly in Figma, so the reasoning behind the structure — not just the values — was legible to anyone building against it. Tokens moved to development as a themed JSON export, and Storybooks were set up so components could be checked instantly against the Figma source, keeping design and production in lockstep.",
           ],
         },
         media: {
-          caption: "primitives-to-semantics diagram",
-          figureCaption: "[Placeholder caption — primitives-to-semantics diagram.]",
+          caption: "semantic color token pairs",
+          src: capdataTokensImage,
+          alt: "Figma palette table showing main, dark, light, and contrastText rows for primary and secondary colors, each resolving to capPrimary or capSecondary scale references.",
+          figureCaption: "Semantic color tokens paired for light and dark mode, from Figma.",
         },
       },
       {
         type: "textMedia",
-        id: "foundations-conventions",
-        heading: "Icon and documentation conventions",
+        id: "foundations-figma-to-production",
+        heading: "From Figma to production",
         textSide: "right",
         content: {
           kind: "prose",
           paragraphs: [
-            "[Placeholder — icon and documentation conventions established for the system.]",
+            "[Placeholder — Figma-to-production parity, validating components in React and TypeScript alongside developers, Storybook documentation and standards, and adoption across teams.]",
           ],
         },
         media: {
-          caption: "icon and documentation guidelines",
-          figureCaption: "[Placeholder caption — icon and documentation guidelines.]",
+          caption: "Figma and code side by side",
+          figureCaption: "[Placeholder caption — Figma and code side by side.]",
         },
       },
       {
         type: "frameStrip",
-        id: "lo-fi-to-hi-fi",
-        heading: "Lo-fi to hi-fi",
+        id: "reworking-the-flows",
+        heading: "Reworking the flows",
+        intro:
+          "[Placeholder — reworking the platform's navigation and introducing guided patterns in place of open-ended configuration, from early wireframes and nav diagrams through hi-fi mockups.]",
         frames: [
           { caption: "Wireframe" },
           { caption: "Nav diagram" },
@@ -239,9 +249,11 @@ export const work: Work[] = [
       },
       {
         type: "frameStrip",
-        id: "dark-mode-first",
-        heading: "Dark mode first",
-        frames: [{ caption: "Light frame" }, { caption: "Dark frame" }],
+        id: "dark-mode-and-responsive",
+        heading: "Dark mode and responsive from day one",
+        intro:
+          "[Placeholder — dark mode as the default theme, responsive breakpoints for the platform's first non-desktop support, and WCAG compliance across both.]",
+        frames: [{ caption: "Light & dark" }, { caption: "Mobile" }],
       },
       {
         type: "textMedia",

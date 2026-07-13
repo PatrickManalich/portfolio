@@ -64,8 +64,8 @@ export function Lightbox({
             <Image
               src={src}
               alt={alt ?? caption}
-              sizes="90vw"
-              className="h-auto max-h-[85vh] w-auto max-w-[90vw] object-contain"
+              sizes="95vw"
+              className="h-auto max-h-[92vh] w-auto max-w-[95vw] object-contain"
             />
           ) : (
             <MediaPlaceholder

@@ -7,7 +7,7 @@ import type { FrameStripBlock } from "@/lib/types"
 export function FrameStripBlockView({ block }: { block: FrameStripBlock }) {
   return (
     <Container width="wide" divider className="flex flex-col gap-8">
-      <SectionHeading title={block.heading} />
+      <SectionHeading title={block.heading} description={block.intro} />
       <div
         className={cn(
           "grid gap-4",

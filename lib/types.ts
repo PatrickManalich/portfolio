@@ -116,6 +116,7 @@ export type FrameStripBlock = {
   type: "frameStrip"
   id: string
   heading: string
+  intro?: string | string[]
   frames: MediaSpec[]
 }
 
