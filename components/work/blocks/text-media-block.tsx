@@ -34,10 +34,8 @@ export function TextMediaBlockView({ block }: { block: TextMediaBlock }) {
         src={block.media.src}
         alt={block.media.alt}
         sizes="(min-width: 1024px) 460px, calc(100vw - 60px)"
-        className={cn(
-          block.media.src ? "" : "aspect-video",
-          block.textSide === "right" && "lg:order-1"
-        )}
+        className={block.media.src ? "" : "aspect-video"}
+        figureClassName={block.textSide === "right" ? "lg:order-1" : undefined}
       />
     </Container>
   )

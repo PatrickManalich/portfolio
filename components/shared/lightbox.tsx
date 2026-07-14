@@ -17,6 +17,7 @@ export function Lightbox({
   sizes = "100vw",
   priority = false,
   className,
+  figureClassName,
 }: {
   caption: string
   figureCaption?: string
@@ -25,12 +26,14 @@ export function Lightbox({
   sizes?: string
   priority?: boolean
   className: string
+  figureClassName?: string
 }) {
   const trigger = (
     <DialogTrigger
       className={cn(
         "block cursor-zoom-in rounded-lg bg-muted p-1.5 text-left outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
-        className
+        className,
+        !figureCaption && figureClassName
       )}
     >
       {src ? (
@@ -50,7 +53,7 @@ export function Lightbox({
   return (
     <Dialog>
       {figureCaption ? (
-        <figure className="m-0 flex flex-col gap-2">
+        <figure className={cn("m-0 flex flex-col gap-2", figureClassName)}>
           {trigger}
           <Caption>{figureCaption}</Caption>
         </figure>

@@ -1,6 +1,7 @@
 import capdataAuditImage from "@/assets/work/capdata/audit.png"
 import capdataBrandImage from "@/assets/work/capdata/brand.png"
 import capdataButtonsImage from "@/assets/work/capdata/buttons.png"
+import capdataChangelogImage from "@/assets/work/capdata/changelog.png"
 import capdataComponentsImage from "@/assets/work/capdata/components.png"
 import capdataDashboardImage from "@/assets/work/capdata/dashboard.png"
 import capdataLegacyImage from "@/assets/work/capdata/legacy.png"
@@ -207,8 +208,8 @@ export const work: Work[] = [
         content: {
           kind: "prose",
           paragraphs: [
-            "The token system came next, built directly into the MUI theme structure — primitive color scales (capPrimary, capSecondary, etc.) laid the foundation, with semantic tokens layered on top to drive light and dark theming. This split meant switching an entire mockup or component from light to dark mode in Figma was a single toggle, not a manual rebuild — main, dark, light, and contrastText values, along with interaction states like hover, selected, and focus, all carried their own light/dark pairs automatically. Surface tokens followed the same logic, with a four-level hierarchy — base, raised, overlay, and elevated — giving every component a consistent home regardless of theme. Spacing and typography ran on shared variables too, so a single change at the token level propagated across every mockup and component in the file.",
-            "I documented the system in Confluence and directly in Figma, so the reasoning behind the structure — not just the values — was legible to anyone building against it. Tokens moved to development as a themed JSON export, and Storybooks were set up so components could be checked instantly against the Figma source, keeping design and production in lockstep.",
+            "The token system came next, built directly into the MUI theme structure — primitive color scales (capPrimary, capSecondary, etc.) laid the foundation, with semantic tokens layered on top to drive light and dark theming. This split meant switching an entire page of components & mockups from light to dark mode in Figma was a single toggle, not a manual rebuild. Every semantic token referenced back to a primitive token rather than a hardcoded hex code, so the relationship between a color and its source was always traceable and scalable.",
+            "Surface tokens followed the same logic, with a four-level hierarchy — base, raised, overlay, and elevated — giving every component a consistent home regardless of theme. Spacing and typography ran on shared variables too, so a single change at the token level propagated across every mockup and component in the file.",
           ],
         },
         media: {
@@ -226,12 +227,15 @@ export const work: Work[] = [
         content: {
           kind: "prose",
           paragraphs: [
-            "[Placeholder — Figma-to-production parity, validating components in React and TypeScript alongside developers, Storybook documentation and standards, and adoption across teams.]",
+            "Token changes moved through the same discipline as code. Updates were made on a branch within the design system file, verified against live mockups before merging, and logged in a running changelog so the history of what changed and why stayed intact. From there, tokens were exported to a developer-ready JSON format and handed to the team.",
+            "Implementation went through a design QA step: as developers rebuilt components in Storybook, I reviewed each one against the Figma source for spacing, color, type, and state accuracy, flagging anything as critical versus triage for later. Having worked as a developer myself, I could speak directly to engineering concerns, review the code directly in the repo, and iterate quickly instead of working through a layer of translation — devs were also looped into design early, so feasibility concerns surfaced before mockups were final rather than after. That process supported over 250 components and 300+ hi-fi mockups across a team of 10+ developers.",
           ],
         },
         media: {
-          caption: "Figma and code side by side",
-          figureCaption: "[Placeholder caption — Figma and code side by side.]",
+          caption: "design system changelog",
+          src: capdataChangelogImage,
+          alt: "Versioned changelog entries for the CAPData design system, each with a date, change-type tag, and ticket link.",
+          figureCaption: "A running changelog tracked every design system update.",
         },
       },
       {
