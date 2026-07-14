@@ -10,6 +10,7 @@ export function FeatureMediaBlockView({ block }: { block: FeatureMediaBlock }) {
         eyebrow={block.eyebrow}
         title={block.heading}
         description={block.intro}
+        descriptionClassName="max-w-3xl"
       />
       <Lightbox
         caption={block.media.caption}

@@ -4,6 +4,9 @@ import capdataButtonsImage from "@/assets/work/capdata/buttons.png"
 import capdataChangelogImage from "@/assets/work/capdata/changelog.png"
 import capdataComponentsImage from "@/assets/work/capdata/components.png"
 import capdataDashboardImage from "@/assets/work/capdata/dashboard.png"
+import capdataFlowsDiagramImage from "@/assets/work/capdata/flows-diagram.png"
+import capdataFlowsNewImage from "@/assets/work/capdata/flows-new.png"
+import capdataFlowsOldImage from "@/assets/work/capdata/flows-old.png"
 import capdataLegacyImage from "@/assets/work/capdata/legacy.png"
 import capdataPersonasImage from "@/assets/work/capdata/personas.png"
 import capdataTokensImage from "@/assets/work/capdata/tokens.png"
@@ -242,13 +245,29 @@ export const work: Work[] = [
         type: "frameStrip",
         id: "reworking-the-flows",
         heading: "Reworking the flows",
-        intro:
-          "[Placeholder — reworking the platform's navigation and introducing guided patterns in place of open-ended configuration, from early wireframes and nav diagrams through hi-fi mockups.]",
+        intro: [
+          "The old platform organized navigation around three flat tabs — Dashboard, Table, and Map — with everything else, from user accounts to system settings, buried under a single account menu in the top right. Users had to hunt for basic administrative tasks, and Table and Map, which were really just two views of the same site list, lived as separate destinations rather than a single connected experience.",
+          "I merged Table and Map into one Sites tab with an in-page toggle between views, so switching how you looked at a site list no longer meant losing your place or reapplying filters. I split the old account menu into two purposeful groups — User Management and Admin Settings — so users could find what they needed by what it was, not by memory. A global search bar tied it together, letting anyone jump straight to a page instead of navigating down to it.",
+        ],
         frames: [
-          { caption: "Wireframe" },
-          { caption: "Nav diagram" },
-          { caption: "Hi-fi v1" },
-          { caption: "Hi-fi final" },
+          {
+            caption: "old navigation structure",
+            src: capdataFlowsOldImage,
+            alt: "The old CRIMECAST platform's flat tab navigation and account menu.",
+            figureCaption: "The old flat tab structure, with many pages buried.",
+          },
+          {
+            caption: "before and after navigation diagram",
+            src: capdataFlowsDiagramImage,
+            alt: "A before-and-after diagram of the platform's navigation, showing Table and Map merging into a Sites tab and the account menu splitting into User Management and Admin Settings.",
+            figureCaption: "Navigation reworked and pages purposefully grouped.",
+          },
+          {
+            caption: "new Sites tab hi-fi mockup",
+            src: capdataFlowsNewImage,
+            alt: "The new CRIMECAST platform's Sites tab, showing the Map and Table toggle.",
+            figureCaption: "The new layered tab structure, with pages properly exposed.",
+          },
         ],
       },
       {

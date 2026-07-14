@@ -1,11 +1,15 @@
+import { cn } from "@/lib/utils"
+
 export function SectionHeading({
   eyebrow,
   title,
   description,
+  descriptionClassName,
 }: {
   eyebrow?: string
   title: string
   description?: string | string[]
+  descriptionClassName?: string
 }) {
   const paragraphs = Array.isArray(description)
     ? description
@@ -24,7 +28,12 @@ export function SectionHeading({
         {title}
       </h2>
       {paragraphs.length > 0 ? (
-        <div className="flex max-w-2xl flex-col gap-3 text-muted-foreground">
+        <div
+          className={cn(
+            "flex max-w-2xl flex-col gap-3 text-muted-foreground",
+            descriptionClassName
+          )}
+        >
           {paragraphs.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
