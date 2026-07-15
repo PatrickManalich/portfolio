@@ -39,6 +39,7 @@ export type WorkPreview = {
   tags: string[]
   metrics: Metric[]
   image?: MediaSpec
+  comingSoon?: boolean
 }
 
 export type MediaSpec = {

@@ -347,7 +347,13 @@ export const work: Work[] = [
     title: "NeuroSPARKS Educational Games",
     description:
       "Conceiving and executing the vision for the award-winning NeuroSPARKS educational games, recognized with the 2022 Back to School Tech & Learning Award of Excellence.",
-    tags: ["Responsive UI", "Design Tokens", "Cross-Platform"],
+    tags: [
+      "Design Tokens",
+      "Accessibility (WCAG)",
+      "Responsive Design",
+      "User Metrics",
+    ],
+    comingSoon: true,
     metrics: [
       { label: "Award", value: "2022 Tech & Learning" },
       { label: "Platforms", value: "Windows, Android, VR" },
