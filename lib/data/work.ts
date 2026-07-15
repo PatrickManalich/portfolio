@@ -23,19 +23,29 @@ export const work: Work[] = [
     client: "CAP Index",
     role: "Senior UI/UX Engineer",
     dates: "Apr 2024 – Jun 2026",
-    title: "CAPData 3.0 Design System",
+    title: "Founding CAP Index's first design system",
     description:
-      "Founding and scaling a dark-mode-first design system from the ground up for a platform relied on by 80% of Fortune 100 companies.",
-    tags: ["Design Systems", "Design Tokens", "Accessibility (WCAG)"],
+      "From full design audit to 300+ hi-fi mockups — founding and scaling a design system from the ground up for a platform relied on by 80% of Fortune 100 companies.",
+    tags: [
+      "Design Tokens",
+      "Accessibility (WCAG)",
+      "Responsive Design",
+      "Dark Mode",
+    ],
     metrics: [
       { label: "Components shipped", value: "250+" },
       { label: "Hi-fi mockups", value: "300+" },
       { label: "Fortune 100 reach", value: "80%" },
     ],
+    image: {
+      caption: "CAPData Platform Sites map view",
+      src: capdataModeLightDesktopImage,
+      alt: "The CRIMECAST platform's Sites map view in light mode on desktop.",
+    },
     eyebrow: "CAP Index case study",
     headline: "Founding CAP Index's first design system",
     metaDescription:
-      "From full design audit to 300+ hi-fi mockups: rebuilding an enterprise platform from the ground up.",
+      "From full design audit to 300+ hi-fi mockups: rebuilding an enterprise platform relied on by 80% of Fortune 100 companies.",
     blocks: [
       {
         type: "hero",
