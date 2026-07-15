@@ -91,7 +91,7 @@ export const work: Work[] = [
             },
             {
               label: "User need",
-              text: "Security leaders needed to assess risk and build the case for decisions quickly. Dense, inconsistent screens and no mobile support meant more time fighting the interface than using the data.",
+              text: "Security leaders needed to assess risk and build a case quickly — but dense, inconsistent screens and no mobile support meant more time fighting the interface than using the data.",
             },
           ],
         },
@@ -158,8 +158,8 @@ export const work: Work[] = [
             text: "The core flow between the map, site library, and site details was confusing, and page layouts made things hard to find — the platform's primary navigation had to be rethought, not patched.",
           },
           {
-            label: "Simplify and guide",
-            text: "The platform presented complex data without guidance — users needed pre-crafted configurations and clearer paths through it, not more options to configure themselves.",
+            label: "Responsive by design",
+            text: "Broke down at smaller breakpoints, mobile especially — layouts, spacing, and density all assumed one desktop width. It needed to work across breakpoints, not just one screen size.",
           },
         ],
       },
@@ -167,7 +167,7 @@ export const work: Work[] = [
         type: "statement",
         id: "how-might-we",
         eyebrow: "How might we",
-        text: "How might we rebuild the CAPData Platform so consistency, clarity, and guidance are the default?",
+        text: "How might we rebuild the CAPData Platform so consistency, clarity, and responsiveness are the default?",
       },
       {
         type: "textMedia",
@@ -281,7 +281,7 @@ export const work: Work[] = [
         heading: "Dark mode and responsive design",
         intro: [
           "Dark mode brought its own set of challenges in a system this data-dense. With risk scores, map icons, and status indicators already carrying meaning through color, dark mode colors were deliberately muted to keep those signals readable. The map added another layer on top of that: beyond its color-coded risk layers, the base map itself needed a true dark-mode variant, not just an inverted light one. Surfaces and elevation posed a different problem — shadows that read clearly in light mode nearly disappeared in dark mode, so surface tokens needed real definition, backed up by highlighted borders where contrast alone wasn't enough to separate layers.",
-          "We also wanted the platform to be responsive from the start, not something retrofitted after the fact — building it to look and work well on mobile as we went, alongside the desktop experience, rather than adapting it once the project was already finished. That meant simplifying dense features, prioritizing the information that mattered most, and cutting back on data density so nothing overwhelmed a phone-sized screen.",
+          "We also wanted the platform to be responsive from the start, not retrofitted after the fact — building it to look and work well on mobile as we went, alongside desktop, rather than adapting it once the project was already finished. That meant simplifying dense features, prioritizing the information that mattered most, and cutting back on data density so nothing overwhelmed a phone-sized screen.",
         ],
         cards: [
           {
@@ -315,47 +315,16 @@ export const work: Work[] = [
         ],
       },
       {
-        type: "textMedia",
-        id: "testing-iteration",
-        heading: "Testing & iteration",
-        textSide: "left",
-        content: {
-          kind: "pairs",
-          pairs: [
-            {
-              insight: "[Placeholder — usability insight one.]",
-              action: "[Placeholder — resulting action one.]",
-            },
-            {
-              insight: "[Placeholder — usability insight two.]",
-              action: "[Placeholder — resulting action two.]",
-            },
-          ],
-        },
-        media: {
-          caption: "usability testing session",
-          figureCaption: "[Placeholder caption — usability testing session.]",
-        },
-      },
-      {
-        type: "stats",
-        id: "results",
-        heading: "Results",
-        metrics: [
+        type: "conclusion",
+        id: "in-conclusion",
+        heading: "In conclusion",
+        paragraph:
+          "The CAPData Platform started out dated, inconsistent, and desktop-only, with no source of truth to build from. It's none of those things now — a token-based Figma design system replaced PowerPoint screens, scattered navigation became one clear structure, and desktop-only layouts now hold up across every breakpoint, mobile included. What began with a full platform audit became the system the team ships every new feature on today, carried forward by 10+ developers.",
+        stats: [
+          { label: "Legacy Screens Audited", value: "90+" },
           { label: "Components", value: "250+" },
-          { label: "Hi-fi mockups", value: "300+" },
-          { label: "Dual-mode", value: "WCAG AA" },
-          { label: "Placeholder metric", value: "—" },
-        ],
-      },
-      {
-        type: "cardRow",
-        id: "what-i-learned",
-        heading: "What I learned",
-        cards: [
-          { label: "[Placeholder lesson one]", text: "[Placeholder — supporting detail.]" },
-          { label: "[Placeholder lesson two]", text: "[Placeholder — supporting detail.]" },
-          { label: "[Placeholder lesson three]", text: "[Placeholder — supporting detail.]" },
+          { label: "Hi-fi Mockups", value: "300+" },
+          { label: "Accessibility", value: "WCAG AA" },
         ],
       },
     ],

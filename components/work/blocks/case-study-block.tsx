@@ -1,5 +1,6 @@
 import { WorkHero } from "@/components/work/work-hero"
 import { CardRowBlockView } from "@/components/work/blocks/card-row-block"
+import { ConclusionBlockView } from "@/components/work/blocks/conclusion-block"
 import { FeatureMediaBlockView } from "@/components/work/blocks/feature-media-block"
 import { FrameStripBlockView } from "@/components/work/blocks/frame-strip-block"
 import { ModeCardsBlockView } from "@/components/work/blocks/mode-cards-block"
@@ -45,5 +46,7 @@ export function CaseStudyBlockView({
       return <StatsBlockView block={block} />
     case "modeCards":
       return <ModeCardsBlockView block={block} />
+    case "conclusion":
+      return <ConclusionBlockView block={block} />
   }
 }

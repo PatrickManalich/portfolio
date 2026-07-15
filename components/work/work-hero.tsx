@@ -28,9 +28,7 @@ export function WorkHero({
       <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
         {headline}
       </h1>
-      <p className="max-w-2xl text-lg text-muted-foreground">
-        {metaDescription}
-      </p>
+      <p className="text-lg text-muted-foreground">{metaDescription}</p>
       <p className="text-sm text-muted-foreground">
         {role} · {dates}
       </p>

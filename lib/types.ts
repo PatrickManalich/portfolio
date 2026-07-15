@@ -142,6 +142,14 @@ export type ModeCardsBlock = {
   cards: ModeCard[]
 }
 
+export type ConclusionBlock = {
+  type: "conclusion"
+  id: string
+  heading: string
+  paragraph: string
+  stats: Metric[]
+}
+
 export type CaseStudyBlock =
   | HeroBlock
   | OverviewBlock
@@ -152,6 +160,7 @@ export type CaseStudyBlock =
   | FrameStripBlock
   | StatsBlock
   | ModeCardsBlock
+  | ConclusionBlock
 
 export type Work = WorkPreview & {
   eyebrow: string
