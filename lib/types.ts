@@ -127,6 +127,21 @@ export type StatsBlock = {
   metrics: Metric[]
 }
 
+export type ModeCard = {
+  icon: IconComponent
+  label: string
+  desktop: MediaSpec
+  mobile: MediaSpec
+}
+
+export type ModeCardsBlock = {
+  type: "modeCards"
+  id: string
+  heading: string
+  intro?: string | string[]
+  cards: ModeCard[]
+}
+
 export type CaseStudyBlock =
   | HeroBlock
   | OverviewBlock
@@ -136,6 +151,7 @@ export type CaseStudyBlock =
   | FeatureMediaBlock
   | FrameStripBlock
   | StatsBlock
+  | ModeCardsBlock
 
 export type Work = WorkPreview & {
   eyebrow: string

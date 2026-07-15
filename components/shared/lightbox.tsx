@@ -18,6 +18,7 @@ export function Lightbox({
   priority = false,
   className,
   figureClassName,
+  imageClassName,
 }: {
   caption: string
   figureCaption?: string
@@ -27,6 +28,7 @@ export function Lightbox({
   priority?: boolean
   className: string
   figureClassName?: string
+  imageClassName?: string
 }) {
   const trigger = (
     <DialogTrigger
@@ -42,7 +44,10 @@ export function Lightbox({
           alt={alt ?? caption}
           sizes={sizes}
           priority={priority}
-          className="h-auto w-full rounded border-[0.5px] border-border"
+          className={cn(
+            "h-auto w-full rounded border-[0.5px] border-border",
+            imageClassName
+          )}
         />
       ) : (
         <MediaPlaceholder caption={caption} className="size-full" />

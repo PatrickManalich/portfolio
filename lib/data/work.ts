@@ -8,8 +8,13 @@ import capdataFlowsDiagramImage from "@/assets/work/capdata/flows-diagram.png"
 import capdataFlowsNewImage from "@/assets/work/capdata/flows-new.png"
 import capdataFlowsOldImage from "@/assets/work/capdata/flows-old.png"
 import capdataLegacyImage from "@/assets/work/capdata/legacy.png"
+import capdataModeDarkDesktopImage from "@/assets/work/capdata/mode-dark-desktop.png"
+import capdataModeDarkMobileImage from "@/assets/work/capdata/mode-dark-mobile.png"
+import capdataModeLightDesktopImage from "@/assets/work/capdata/mode-light-desktop.png"
+import capdataModeLightMobileImage from "@/assets/work/capdata/mode-light-mobile.png"
 import capdataPersonasImage from "@/assets/work/capdata/personas.png"
 import capdataTokensImage from "@/assets/work/capdata/tokens.png"
+import { Moon, Sun } from "lucide-react"
 import type { Work } from "@/lib/types"
 
 export const work: Work[] = [
@@ -271,12 +276,43 @@ export const work: Work[] = [
         ],
       },
       {
-        type: "frameStrip",
+        type: "modeCards",
         id: "dark-mode-and-responsive",
-        heading: "Dark mode and responsive from day one",
-        intro:
-          "[Placeholder — dark mode as the default theme, responsive breakpoints for the platform's first non-desktop support, and WCAG compliance across both.]",
-        frames: [{ caption: "Light & dark" }, { caption: "Mobile" }],
+        heading: "Dark mode and responsive design",
+        intro: [
+          "Dark mode brought its own set of challenges in a system this data-dense. With risk scores, map icons, and status indicators already carrying meaning through color, dark mode colors were deliberately muted to keep those signals readable. The map added another layer on top of that: beyond its color-coded risk layers, the base map itself needed a true dark-mode variant, not just an inverted light one. Surfaces and elevation posed a different problem — shadows that read clearly in light mode nearly disappeared in dark mode, so surface tokens needed real definition, backed up by highlighted borders where contrast alone wasn't enough to separate layers.",
+          "We also wanted the platform to be responsive from the start, not something retrofitted after the fact — building it to look and work well on mobile as we went, alongside the desktop experience, rather than adapting it once the project was already finished. That meant simplifying dense features, prioritizing the information that mattered most, and cutting back on data density so nothing overwhelmed a phone-sized screen.",
+        ],
+        cards: [
+          {
+            icon: Sun,
+            label: "Light mode",
+            desktop: {
+              caption: "light mode desktop",
+              src: capdataModeLightDesktopImage,
+              alt: "The CRIMECAST platform's Sites map view in light mode on desktop.",
+            },
+            mobile: {
+              caption: "light mode mobile",
+              src: capdataModeLightMobileImage,
+              alt: "The CRIMECAST platform's Sites map view in light mode on mobile.",
+            },
+          },
+          {
+            icon: Moon,
+            label: "Dark mode",
+            desktop: {
+              caption: "dark mode desktop",
+              src: capdataModeDarkDesktopImage,
+              alt: "The CRIMECAST platform's Sites map view in dark mode on desktop.",
+            },
+            mobile: {
+              caption: "dark mode mobile",
+              src: capdataModeDarkMobileImage,
+              alt: "The CRIMECAST platform's Sites map view in dark mode on mobile.",
+            },
+          },
+        ],
       },
       {
         type: "textMedia",
