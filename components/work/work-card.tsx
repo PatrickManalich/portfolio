@@ -22,16 +22,9 @@ export function WorkCard({ work }: { work: WorkPreview }) {
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-1.5">
           <div className="flex flex-col gap-1">
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-                {work.client}
-              </span>
-              {comingSoon ? (
-                <Badge variant="secondary" className="uppercase tracking-wide">
-                  Coming Soon
-                </Badge>
-              ) : null}
-            </div>
+            <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+              {work.client}
+            </span>
             <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
               {work.title}
             </h3>
@@ -72,6 +65,12 @@ export function WorkCard({ work }: { work: WorkPreview }) {
             sizes="(min-width: 1024px) 350px, calc(100vw - 108px)"
             className="h-full w-full rounded border-[0.5px] border-border object-cover"
           />
+        ) : comingSoon ? (
+          <div className="flex size-full items-center justify-center rounded bg-border/50">
+            <span className="text-sm font-medium text-muted-foreground">
+              Coming Soon
+            </span>
+          </div>
         ) : (
           <MediaPlaceholder
             caption={work.image?.caption ?? work.title}
