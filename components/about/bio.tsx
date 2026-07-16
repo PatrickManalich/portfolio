@@ -11,9 +11,8 @@ export function Bio() {
   return (
     <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[3fr_2fr]">
       <div className="flex flex-col gap-6">
-        <SectionHeading eyebrow="About" title="Hi, I'm Patrick! 👋" />
+        <SectionHeading eyebrow="About" title="A bit more about me" />
         <div className="flex flex-col gap-4 text-muted-foreground">
-          <p>I&apos;m a Senior Design Systems Engineer bridging design and code.</p>
           <p>
             With a diverse background spanning UI/UX design, front-end
             engineering, game development, and animation, I bring a rare mix
@@ -52,12 +51,12 @@ export function Bio() {
           </Button>
         </div>
       </div>
-      <div className="aspect-[4/5] rounded-lg bg-muted p-1.5">
+      <div className="aspect-square rounded-lg bg-muted p-1.5">
         <Image
           src={profileImage}
           alt="Patrick Manalich"
           sizes="(min-width: 1024px) 366px, calc(100vw - 60px)"
-          className="h-full w-full rounded border-[0.5px] border-border object-cover object-top"
+          className="h-full w-full rounded border-[0.5px] border-border object-cover"
         />
       </div>
     </div>

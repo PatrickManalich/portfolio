@@ -5,10 +5,10 @@ import { site } from "@/lib/data/site"
 
 export function Hero() {
   return (
-    <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-20 sm:py-28">
+    <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 pt-10 pb-12 sm:pt-14 sm:pb-16">
       <div className="flex flex-col gap-4">
         <span className="text-sm font-medium text-muted-foreground">
-          Hi, I&apos;m {site.name.split(" ")[0]}
+          Hi, I&apos;m {site.name.split(" ")[0]} 👋
         </span>
         <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
           {site.title}
