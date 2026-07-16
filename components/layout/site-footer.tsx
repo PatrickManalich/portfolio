@@ -49,7 +49,7 @@ export function SiteFooter() {
             ))}
           </div>
         </div>
-        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-6 text-sm text-muted-foreground">
+        <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-muted-foreground">
           <p>
             © {year} {site.name}
           </p>

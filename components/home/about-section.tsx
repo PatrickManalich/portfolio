@@ -1,5 +1,4 @@
 import { Bio } from "@/components/about/bio"
-import { FunStats } from "@/components/about/fun-stats"
 import { Timeline } from "@/components/about/timeline"
 
 export function AboutSection() {
@@ -10,7 +9,6 @@ export function AboutSection() {
     >
       <Bio />
       <Timeline />
-      <FunStats />
     </section>
   )
 }
