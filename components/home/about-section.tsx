@@ -1,5 +1,4 @@
 import { Bio } from "@/components/about/bio"
-import { Timeline } from "@/components/about/timeline"
 
 import { StrengthsSection } from "./strengths-section"
 
@@ -11,7 +10,6 @@ export function AboutSection() {
     >
       <Bio />
       <StrengthsSection />
-      <Timeline />
     </section>
   )
 }
