@@ -1,5 +1,6 @@
 import { Container } from "@/components/shared/container"
 import { Lightbox } from "@/components/shared/lightbox"
+import { LightboxGallery } from "@/components/shared/lightbox-gallery"
 import { SectionHeading } from "@/components/shared/section-heading"
 import type { ModeCard, ModeCardsBlock } from "@/lib/types"
 
@@ -9,6 +10,8 @@ const mobileSizes =
   "(min-width: 1024px) 79px, (min-width: 640px) calc(10.3vw - 27px), calc(20.7vw - 30px)"
 
 export function ModeCardsBlockView({ block }: { block: ModeCardsBlock }) {
+  const images = block.cards.flatMap((card) => [card.desktop, card.mobile])
+
   return (
     <Container width="wide" divider className="flex flex-col gap-8">
       <SectionHeading
@@ -16,16 +19,31 @@ export function ModeCardsBlockView({ block }: { block: ModeCardsBlock }) {
         description={block.intro}
         descriptionClassName="max-w-3xl"
       />
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {block.cards.map((card) => (
-          <ModeCardView key={card.label} card={card} />
-        ))}
-      </div>
+      <LightboxGallery images={images}>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {block.cards.map((card, cardIndex) => (
+            <ModeCardView
+              key={card.label}
+              card={card}
+              desktopIndex={cardIndex * 2}
+              mobileIndex={cardIndex * 2 + 1}
+            />
+          ))}
+        </div>
+      </LightboxGallery>
     </Container>
   )
 }
 
-function ModeCardView({ card }: { card: ModeCard }) {
+function ModeCardView({
+  card,
+  desktopIndex,
+  mobileIndex,
+}: {
+  card: ModeCard
+  desktopIndex: number
+  mobileIndex: number
+}) {
   const Icon = card.icon
 
   return (
@@ -36,6 +54,7 @@ function ModeCardView({ card }: { card: ModeCard }) {
       </div>
       <div className="flex w-full items-stretch justify-center gap-2">
         <Lightbox
+          galleryIndex={desktopIndex}
           caption={card.desktop.caption}
           figureCaption={card.desktop.figureCaption}
           src={card.desktop.src}
@@ -44,6 +63,7 @@ function ModeCardView({ card }: { card: ModeCard }) {
           className="aspect-[2880/2048] w-[63%]"
         />
         <Lightbox
+          galleryIndex={mobileIndex}
           caption={card.mobile.caption}
           figureCaption={card.mobile.figureCaption}
           src={card.mobile.src}

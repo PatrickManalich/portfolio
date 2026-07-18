@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react"
 
 import { Container } from "@/components/shared/container"
 import { Lightbox } from "@/components/shared/lightbox"
+import { LightboxGallery } from "@/components/shared/lightbox-gallery"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { SimpleCard } from "@/components/shared/simple-card"
 import { Surface } from "@/components/shared/surface"
@@ -28,15 +29,18 @@ export function TextMediaBlockView({ block }: { block: TextMediaBlock }) {
         />
         <TextMediaContentView content={block.content} />
       </div>
-      <Lightbox
-        caption={block.media.caption}
-        figureCaption={block.media.figureCaption}
-        src={block.media.src}
-        alt={block.media.alt}
-        sizes="(min-width: 1024px) 460px, calc(100vw - 60px)"
-        className={block.media.src ? "" : "aspect-video"}
-        figureClassName={block.textSide === "right" ? "lg:order-1" : undefined}
-      />
+      <LightboxGallery images={[block.media]}>
+        <Lightbox
+          galleryIndex={0}
+          caption={block.media.caption}
+          figureCaption={block.media.figureCaption}
+          src={block.media.src}
+          alt={block.media.alt}
+          sizes="(min-width: 1024px) 460px, calc(100vw - 60px)"
+          className={block.media.src ? "" : "aspect-video"}
+          figureClassName={block.textSide === "right" ? "lg:order-1" : undefined}
+        />
+      </LightboxGallery>
     </Container>
   )
 }

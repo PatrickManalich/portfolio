@@ -1,5 +1,6 @@
 import { Container } from "@/components/shared/container"
 import { Lightbox } from "@/components/shared/lightbox"
+import { LightboxGallery } from "@/components/shared/lightbox-gallery"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { cn } from "@/lib/utils"
 import type { FrameStripBlock } from "@/lib/types"
@@ -22,28 +23,31 @@ export function FrameStripBlockView({ block }: { block: FrameStripBlock }) {
         description={block.intro}
         descriptionClassName="max-w-3xl"
       />
-      <div
-        className={cn(
-          "grid gap-4",
-          block.frames.length === 3
-            ? "grid-cols-1 sm:grid-cols-3"
-            : block.frames.length > 2
-              ? "grid-cols-2 sm:grid-cols-4"
-              : "grid-cols-2"
-        )}
-      >
-        {block.frames.map((frame, index) => (
-          <Lightbox
-            key={index}
-            caption={frame.caption}
-            figureCaption={frame.figureCaption}
-            src={frame.src}
-            alt={frame.alt}
-            sizes={frameSizes(block.frames.length)}
-            className={frame.src ? "" : "aspect-video"}
-          />
-        ))}
-      </div>
+      <LightboxGallery images={block.frames}>
+        <div
+          className={cn(
+            "grid gap-4",
+            block.frames.length === 3
+              ? "grid-cols-1 sm:grid-cols-3"
+              : block.frames.length > 2
+                ? "grid-cols-2 sm:grid-cols-4"
+                : "grid-cols-2"
+          )}
+        >
+          {block.frames.map((frame, index) => (
+            <Lightbox
+              key={index}
+              galleryIndex={index}
+              caption={frame.caption}
+              figureCaption={frame.figureCaption}
+              src={frame.src}
+              alt={frame.alt}
+              sizes={frameSizes(block.frames.length)}
+              className={frame.src ? "" : "aspect-video"}
+            />
+          ))}
+        </div>
+      </LightboxGallery>
     </Container>
   )
 }
