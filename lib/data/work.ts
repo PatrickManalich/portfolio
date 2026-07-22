@@ -42,7 +42,7 @@ export const work: Work[] = [
       src: capdataModeLightDesktopImage,
       alt: "The CRIMECAST platform's Sites map view in light mode on desktop.",
     },
-    eyebrow: "CAP Index case study",
+    eyebrow: "CAP Index Case Study",
     headline: "Founding CAP Index's first design system",
     metaDescription:
       "From full design audit to 300+ hi-fi mockups: rebuilding an enterprise platform relied on by 80% of Fortune 100 companies.",
@@ -354,7 +354,7 @@ export const work: Work[] = [
       { label: "Platforms", value: "Windows, Android, VR" },
       { label: "Product lines led", value: "Multiple" },
     ],
-    eyebrow: "Barron Associates case study",
+    eyebrow: "Barron Associates Case Study",
     headline: "[Placeholder — NeuroSPARKS hero headline.]",
     metaDescription:
       "Lead design and engineering for the award-winning NeuroSPARKS educational games.",
