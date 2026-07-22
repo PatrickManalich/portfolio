@@ -1,8 +1,13 @@
-import Link from "next/link"
+"use client"
 
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+import { handleSmoothNavClick } from "@/lib/smooth-scroll"
 import type { NavItem } from "@/lib/types"
 
 export function NavLink({ item }: { item: NavItem }) {
+  const pathname = usePathname()
   const className =
     "text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
 
@@ -20,7 +25,11 @@ export function NavLink({ item }: { item: NavItem }) {
   }
 
   return (
-    <Link href={item.href} className={className}>
+    <Link
+      href={item.href}
+      onClick={(event) => handleSmoothNavClick(event, item.href, pathname)}
+      className={className}
+    >
       {item.label}
     </Link>
   )

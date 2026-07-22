@@ -1,10 +1,15 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { contactLinks } from "@/lib/data/contact-links"
 import { navItems, site } from "@/lib/data/site"
+import { handleSmoothNavClick } from "@/lib/smooth-scroll"
 
 export function SiteFooter() {
   const year = new Date().getFullYear()
+  const pathname = usePathname()
 
   return (
     <footer className="border-t border-border">
@@ -26,6 +31,9 @@ export function SiteFooter() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={(event) =>
+                    handleSmoothNavClick(event, item.href, pathname)
+                  }
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   {item.label}
