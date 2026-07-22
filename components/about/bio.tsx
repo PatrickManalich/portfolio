@@ -10,7 +10,7 @@ import { site } from "@/lib/data/site"
 export function Bio() {
   return (
     <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[3fr_2fr]">
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6 border-l-4 border-brand-3 pl-4">
         <SectionHeading eyebrow="About" title="A bit more about me" />
         <div className="flex flex-col gap-4 text-muted-foreground">
           <p>
