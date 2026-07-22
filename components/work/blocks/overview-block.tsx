@@ -2,11 +2,17 @@ import { Container } from "@/components/shared/container"
 import { SectionHeading } from "@/components/shared/section-heading"
 import type { OverviewBlock } from "@/lib/types"
 
-export function OverviewBlockView({ block }: { block: OverviewBlock }) {
+export function OverviewBlockView({
+  block,
+  accentClassName,
+}: {
+  block: OverviewBlock
+  accentClassName?: string
+}) {
   return (
     <Container width="wide" divider className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_1fr]">
       <div className="flex flex-col gap-6">
-        <SectionHeading title="Overview" />
+        <SectionHeading title="Overview" titleClassName={accentClassName} />
         <div className="flex flex-col gap-4 text-muted-foreground">
           {block.paragraphs.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>

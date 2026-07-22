@@ -9,13 +9,20 @@ const desktopSizes =
 const mobileSizes =
   "(min-width: 1024px) 79px, (min-width: 640px) calc(10.3vw - 27px), calc(20.7vw - 30px)"
 
-export function ModeCardsBlockView({ block }: { block: ModeCardsBlock }) {
+export function ModeCardsBlockView({
+  block,
+  accentClassName,
+}: {
+  block: ModeCardsBlock
+  accentClassName?: string
+}) {
   const images = block.cards.flatMap((card) => [card.desktop, card.mobile])
 
   return (
     <Container width="wide" divider className="flex flex-col gap-8">
       <SectionHeading
         title={block.heading}
+        titleClassName={accentClassName}
         description={block.intro}
         descriptionClassName="max-w-3xl"
       />

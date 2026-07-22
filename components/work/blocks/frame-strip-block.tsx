@@ -15,11 +15,18 @@ function frameSizes(frameCount: number) {
   return "(min-width: 1024px) 220px, (min-width: 640px) calc((100vw - 96px) / 4 - 12px), calc((100vw - 64px) / 2 - 12px)"
 }
 
-export function FrameStripBlockView({ block }: { block: FrameStripBlock }) {
+export function FrameStripBlockView({
+  block,
+  accentClassName,
+}: {
+  block: FrameStripBlock
+  accentClassName?: string
+}) {
   return (
     <Container width="wide" divider className="flex flex-col gap-8">
       <SectionHeading
         title={block.heading}
+        titleClassName={accentClassName}
         description={block.intro}
         descriptionClassName="max-w-3xl"
       />

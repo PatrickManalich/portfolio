@@ -9,7 +9,13 @@ import { Surface } from "@/components/shared/surface"
 import { cn } from "@/lib/utils"
 import type { InsightAction, TextMediaBlock, TextMediaContent } from "@/lib/types"
 
-export function TextMediaBlockView({ block }: { block: TextMediaBlock }) {
+export function TextMediaBlockView({
+  block,
+  accentClassName,
+}: {
+  block: TextMediaBlock
+  accentClassName?: string
+}) {
   return (
     <Container
       width="wide"
@@ -25,6 +31,7 @@ export function TextMediaBlockView({ block }: { block: TextMediaBlock }) {
         <SectionHeading
           eyebrow={block.eyebrow}
           title={block.heading}
+          titleClassName={accentClassName}
           description={block.intro}
         />
         <TextMediaContentView content={block.content} />

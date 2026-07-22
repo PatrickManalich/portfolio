@@ -9,14 +9,16 @@ export function Hero() {
       id="hero-section"
       className="mx-auto flex w-full max-w-5xl flex-col px-6 pt-10 pb-12 sm:pt-14 sm:pb-16"
     >
-      <div className="flex flex-col gap-6 border-l-4 border-brand-1 pl-4">
+      <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">
-          <span className="text-sm font-medium text-muted-foreground">
-            Hi, I&apos;m {site.name.split(" ")[0]} 👋
-          </span>
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-            {site.title}
-          </h1>
+          <div className="flex flex-col gap-1 border-l-4 border-brand-1 pl-4">
+            <span className="text-sm font-medium text-muted-foreground">
+              Hi, I&apos;m {site.name.split(" ")[0]} 👋
+            </span>
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
+              {site.title}
+            </h1>
+          </div>
           <p className="max-w-2xl text-lg text-muted-foreground">
             {site.heroSummary}
           </p>

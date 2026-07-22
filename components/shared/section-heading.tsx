@@ -3,11 +3,13 @@ import { cn } from "@/lib/utils"
 export function SectionHeading({
   eyebrow,
   title,
+  titleClassName,
   description,
   descriptionClassName,
 }: {
   eyebrow?: string
   title: string
+  titleClassName?: string
   description?: string | string[]
   descriptionClassName?: string
 }) {
@@ -24,7 +26,7 @@ export function SectionHeading({
           {eyebrow}
         </span>
       ) : null}
-      <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+      <h2 className={cn("text-2xl font-semibold tracking-tight sm:text-3xl", titleClassName)}>
         {title}
       </h2>
       {paragraphs.length > 0 ? (

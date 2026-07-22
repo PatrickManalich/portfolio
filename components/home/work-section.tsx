@@ -8,8 +8,8 @@ export function WorkSection() {
       id="work"
       className="mx-auto flex w-full max-w-5xl scroll-mt-8 flex-col px-6 py-12"
     >
-      <div className="flex flex-col gap-8 border-l-4 border-brand-2 pl-4">
-        <SectionHeading eyebrow="Work" title="What I've built recently" />
+      <div className="flex flex-col gap-8">
+        <SectionHeading title="Work" titleClassName="border-l-4 border-brand-2 pl-4" />
         <WorkList work={work} />
       </div>
     </section>
