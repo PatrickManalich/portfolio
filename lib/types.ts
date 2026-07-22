@@ -35,7 +35,6 @@ export type WorkPreview = {
   role: string
   dates: string
   title: string
-  cardHeading?: string
   description: string
   tags: string[]
   metrics: Metric[]

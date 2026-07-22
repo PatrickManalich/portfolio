@@ -340,9 +340,8 @@ export const work: Work[] = [
     role: "Lead Front-End Engineer",
     dates: "Aug 2018 – Apr 2024",
     title: "NeuroSPARKS educational games",
-    cardHeading: "NeuroSPARKS educational games — Barron Associates",
     description:
-      "Conceiving and executing the vision for the award-winning NeuroSPARKS educational games, recognized with the 2022 Back to School Tech & Learning Award of Excellence.",
+      "Conceiving and executing the vision for the award-winning NeuroSPARKS educational games at Barron Associates, recognized with the 2022 Back to School Tech & Learning Award of Excellence.",
     tags: [
       "Design Tokens",
       "Accessibility (WCAG)",

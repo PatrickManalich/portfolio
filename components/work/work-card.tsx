@@ -19,10 +19,10 @@ export function WorkCard({ work }: { work: WorkPreview }) {
           "relative cursor-pointer transition-shadow hover:shadow-md"
       )}
     >
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-1.5">
-          <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
-            {work.cardHeading ?? work.title}
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3">
+          <h3 className="text-xl font-medium tracking-tight sm:text-2xl">
+            {work.title}
           </h3>
           <p className="text-xs text-muted-foreground italic">
             {work.role} · {work.dates}
@@ -39,13 +39,13 @@ export function WorkCard({ work }: { work: WorkPreview }) {
           ))}
         </div>
         {comingSoon ? (
-          <span className="mt-auto pt-2 text-sm font-medium text-muted-foreground">
+          <span className="mt-auto text-sm font-medium text-muted-foreground">
             Case study coming soon
           </span>
         ) : (
           <Link
             href={`/work/${work.slug}`}
-            className="group mt-auto inline-flex w-fit items-center gap-1.5 pt-2 text-sm font-medium text-primary underline-offset-4 hover:underline after:absolute after:inset-0 after:content-['']"
+            className="group mt-auto inline-flex w-fit items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline after:absolute after:inset-0 after:content-['']"
           >
             Read case study
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
