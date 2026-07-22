@@ -4,7 +4,6 @@ import "./globals.css";
 
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { StickyNav } from "@/components/layout/sticky-nav";
 import { site } from "@/lib/data/site";
 
 const geistSans = Geist({
@@ -37,7 +36,6 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <SiteHeader />
-        <StickyNav />
         <main className="flex-1">{children}</main>
         <SiteFooter />
       </body>
