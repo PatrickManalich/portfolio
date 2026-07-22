@@ -6,10 +6,12 @@ export function StrengthCard({ strength }: { strength: Strength }) {
 
   return (
     <Surface className="flex flex-col gap-3">
-      <Icon className="size-5 text-muted-foreground" />
-      <h3 className="text-base font-medium tracking-tight">
-        {strength.title}
-      </h3>
+      <div className="flex items-center gap-2">
+        <Icon className="size-5 text-muted-foreground" />
+        <h3 className="text-base font-medium tracking-tight">
+          {strength.title}
+        </h3>
+      </div>
       <p className="text-sm text-muted-foreground">{strength.description}</p>
     </Surface>
   )
