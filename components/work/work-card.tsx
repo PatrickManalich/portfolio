@@ -21,14 +21,9 @@ export function WorkCard({ work }: { work: WorkPreview }) {
     >
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-1.5">
-          <div className="flex flex-col gap-1">
-            <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-              {work.client}
-            </span>
-            <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
-              {work.title}
-            </h3>
-          </div>
+          <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
+            {work.cardHeading ?? work.title}
+          </h3>
           <p className="text-xs text-muted-foreground italic">
             {work.role} · {work.dates}
           </p>

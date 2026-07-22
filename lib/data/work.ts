@@ -115,13 +115,11 @@ export const work: Work[] = [
       {
         type: "statement",
         id: "problem-to-solve",
-        eyebrow: "Problem to solve",
         text: "The CAPData Platform was dated, inconsistent, and desktop-only — and it couldn't scale to what came next.",
       },
       {
         type: "featureMedia",
         id: "research",
-        eyebrow: "Research",
         heading: "Personas & requirements",
         intro:
           "CAP Index had deep informal knowledge of its users — sales calls, support conversations, years of client relationships — but none of it was documented in a format that design decisions could be built on. I led the company's first user personas, synthesizing internal expertise and periodic client conversations into profiles spanning our core industries: retail, banking, and healthcare. Alongside them, I gathered and documented feature requests and pain points from across the organization, turning scattered requirements into a prioritized foundation for the redesign.",
@@ -156,7 +154,6 @@ export const work: Work[] = [
         type: "cardRow",
         id: "key-insights",
         heading: "Key insights",
-        intro: "Three insights from the audit shaped everything that followed.",
         numbered: true,
         cards: [
           {
@@ -176,13 +173,11 @@ export const work: Work[] = [
       {
         type: "statement",
         id: "how-might-we",
-        eyebrow: "How might we",
         text: "How might we rebuild the CAPData Platform so consistency, clarity, and responsiveness are the default?",
       },
       {
         type: "textMedia",
         id: "foundations-base-library",
-        eyebrow: "Foundations",
         heading: "Choosing a base library",
         textSide: "left",
         content: {
@@ -344,7 +339,8 @@ export const work: Work[] = [
     client: "Barron Associates",
     role: "Lead Front-End Engineer",
     dates: "Aug 2018 – Apr 2024",
-    title: "NeuroSPARKS Educational Games",
+    title: "NeuroSPARKS educational games",
+    cardHeading: "NeuroSPARKS educational games — Barron Associates",
     description:
       "Conceiving and executing the vision for the award-winning NeuroSPARKS educational games, recognized with the 2022 Back to School Tech & Learning Award of Excellence.",
     tags: [

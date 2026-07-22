@@ -35,6 +35,7 @@ export type WorkPreview = {
   role: string
   dates: string
   title: string
+  cardHeading?: string
   description: string
   tags: string[]
   metrics: Metric[]
@@ -66,7 +67,7 @@ export type OverviewBlock = {
 export type StatementBlock = {
   type: "statement"
   id: string
-  eyebrow: string
+  eyebrow?: string
   text: string
 }
 
