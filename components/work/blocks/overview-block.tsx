@@ -10,7 +10,7 @@ export function OverviewBlockView({
   accentClassName?: string
 }) {
   return (
-    <Container width="wide" divider className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_1fr]">
+    <Container width="wide" className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_1fr]">
       <div className="flex flex-col gap-6">
         <SectionHeading title="Overview" titleClassName={accentClassName} />
         <div className="flex flex-col gap-4 text-muted-foreground">
@@ -19,7 +19,7 @@ export function OverviewBlockView({
           ))}
         </div>
       </div>
-      <dl className="flex flex-col divide-y divide-border border-t border-border text-sm">
+      <dl className="flex flex-col divide-y divide-border text-sm">
         {block.facts.map((fact) => (
           <div key={fact.label} className="flex flex-col gap-1 py-3">
             <dt className="text-xs font-medium tracking-wide text-muted-foreground uppercase">

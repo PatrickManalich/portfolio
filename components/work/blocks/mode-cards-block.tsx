@@ -19,7 +19,7 @@ export function ModeCardsBlockView({
   const images = block.cards.flatMap((card) => [card.desktop, card.mobile])
 
   return (
-    <Container width="wide" divider className="flex flex-col gap-8">
+    <Container width="wide" className="flex flex-col gap-8">
       <SectionHeading
         title={block.heading}
         titleClassName={accentClassName}

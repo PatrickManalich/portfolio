@@ -5,7 +5,7 @@ import type { StatsBlock } from "@/lib/types"
 
 export function StatsBlockView({ block }: { block: StatsBlock }) {
   return (
-    <Container width="wide" divider className="flex flex-col gap-8">
+    <Container width="wide" className="flex flex-col gap-8">
       {block.heading ? <SectionHeading title={block.heading} /> : null}
       <MetricsRow metrics={block.metrics} size="lg" />
     </Container>

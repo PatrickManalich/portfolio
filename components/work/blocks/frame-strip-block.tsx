@@ -23,7 +23,7 @@ export function FrameStripBlockView({
   accentClassName?: string
 }) {
   return (
-    <Container width="wide" divider className="flex flex-col gap-8">
+    <Container width="wide" className="flex flex-col gap-8">
       <SectionHeading
         title={block.heading}
         titleClassName={accentClassName}

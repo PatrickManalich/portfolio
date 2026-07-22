@@ -11,7 +11,7 @@ export function CardRowBlockView({
   accentClassName?: string
 }) {
   return (
-    <Container width="wide" divider className="flex flex-col gap-8">
+    <Container width="wide" className="flex flex-col gap-8">
       <SectionHeading
         eyebrow={block.eyebrow}
         title={block.heading}
